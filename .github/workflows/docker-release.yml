@@ -1,0 +1,13 @@
+name: Docker Release
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+
+jobs:
+  docker:
+    uses: hanzoai/.github/.github/workflows/docker-build.yml@main
+    with:
+      image: ghcr.io/hanzoai/sql-meta
+    secrets: inherit
