@@ -1,4 +1,4 @@
-# sql-meta — AI Assistant Context
+# sql-meta
 
 # Hanzo SQL Meta
 
