@@ -1,0 +1,16 @@
+# Canonical CI/CD config for hanzoai/sql-meta — read by the hanzoai/ci reusable
+# (.hanzo/workflows/cicd.yml) and by platform.hanzo.ai.
+#
+# PostgreSQL metadata/management API. The repo is a pinned re-tag of the
+# upstream image with our provenance labels — there is no source in it, so the
+# Dockerfile IS the gate and a `test:` block would have nothing to compile.
+# It can still go red, which is the point: the pin is an exact upstream tag,
+# and this build fails the moment that tag stops resolving.
+#
+# No `deploy:` — no operator Service CR names this image yet.
+
+images:
+  - name: sql-meta
+    context: .
+    dockerfile: Dockerfile
+    repo: ghcr.io/hanzoai/sql-meta
